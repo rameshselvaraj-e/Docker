@@ -20,3 +20,10 @@ OS: Ubuntu:
       systemctl status docker.service
       docker info
       
+ OS: SUSE
+       zyppper install apt-transport-https curl -y
+       zypper install -y docker
+       systemctl enable docker.service
+       systemctl start docker.service
+       systemctl status docker.service
+       docker version / docker --version
