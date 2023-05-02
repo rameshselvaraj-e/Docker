@@ -1,0 +1,22 @@
+docker images
+docker ps
+docker ps -a
+docker pull ubuntu:latest
+docker tag ubuntu ubuntu:v1.0
+docker push ubuntu:v1.0
+docker pull httpd
+
+Create Container's using Docker images:
+
+docker run hello-world
+docker container ls
+docker images
+docker run -d --name myweb-site -p 80:80 -d httpd
+
+
+Create local REgistry:
+docker run -d -p 5000:5000 --restart=always --name registry registry:2
+
+docker build -t myweb . 
+
+
