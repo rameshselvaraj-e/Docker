@@ -1,5 +1,5 @@
 docker pull centos:centos7.9.2009
-
+******************************************
 Syntax and explanation:
 FROM -> To pull the base image from Docker hub
 RUN -> To execute Commands
@@ -10,7 +10,7 @@ COPY -> To copy a file / directory from local host to docker container
 ADD -> To copy files & Folders from local hosts to doceker containers. help us dowloand the packages from git/website url's
 EXPOSE -> Docker container listen on the specific port at runtime
 ENV -> To set Environment Variables
-
+--------------------------------------------------------------------
 
 Test Case 1:
 FROM centos:centos7.9.2009
@@ -34,13 +34,14 @@ CMD ["c", "3", "192.168.10.1"]
   ls -ld /app
   ls -l index.html
 
-
+--------------------------------------------------------------------------
 Test Case 2:
 FROM centos:centos7.9.2009
 RUN yum install vim -y && yum install httpd -y
 RUN mkdir -p /app/var/wwww
 COPY index.html /app/var/www
 
+-------------------------------------------------------------------------
 Test Case 3: 
 Install tomcat on centos
 a) Pill Centos from docker hub                    FROM
@@ -74,7 +75,7 @@ docekr run -d --name rameshweb -p 8081:8080 rameshtamcat
 docekr ps -a
 
 http:192.168.10.10:8081
-
+-----------------------------------------------------------------------
 adding war file:
 vi Dockerfile
 FROM centos:centos7.9.2009
@@ -94,10 +95,10 @@ docekr run -d --name ramesh_webdemo -p 8082:8080 rameshtamcat
 docekr ps -a
 
 http:192.168.10.10:8081/webapps
-
+-----------------------------------------------------------------------------
 docker stop <container id>
 docker start <container id>
 docker rm <container id>
-
+docker rmi <imageid>
 
 
